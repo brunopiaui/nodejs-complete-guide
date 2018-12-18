@@ -2,7 +2,9 @@ const path = require('path')
 
 const express = require('express')
 const bodyParser = require('body-parser')
-const expressHbs = require('express-handlebars')
+
+// Handlebars Template
+// const expressHbs = require('express-handlebars')
 
 const app = express()
 
@@ -10,16 +12,18 @@ const app = express()
 // app.set('view engine', 'pug')
 
 // Handlebars Template
-app.engine(
-  'hbs',
-  expressHbs({
-    layoutsDir: 'views/layouts/',
-    defaultLayout: 'main-layout',
-    extname: 'hbs'
-  })
-)
-app.set('view engine', 'hbs')
+// app.engine(
+//   'hbs',
+//   expressHbs({
+//     layoutsDir: 'views/layouts/',
+//     defaultLayout: 'main-layout',
+//     extname: 'hbs'
+//   })
+// )
+// app.set('view engine', 'hbs')
 
+//EJS Template
+app.set('view engine', 'ejs')
 app.set('views', 'views')
 
 const adminData = require('./routes/admin')
